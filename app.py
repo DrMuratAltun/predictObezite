@@ -11,9 +11,9 @@ from sklearn.metrics import accuracy_score
 train = pd.read_csv('train.csv')
 
 # Bireysel sınıflandırıcıları oluştur
-log_reg = LogisticRegression(multi_class='multinomial', solver='lbfgs')
-lgbm = LGBMClassifier()
-xgb_classifier = xgb.XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
+#log_reg = LogisticRegression(multi_class='multinomial', solver='lbfgs')
+#lgbm = LGBMClassifier()
+#xgb_classifier = xgb.XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
 
 # Bir Voting Classifier oluştur
 voting_clf = VotingClassifier(estimators=[
@@ -50,10 +50,10 @@ zaratio_Average = st.number_input('Ortalama Z/A Oranı')
 density_Average = st.number_input('Ortalama Yoğunluk')
 
 # Tahmin butonu
-if st.button('Sertliği Tahmin Et'):
+'''if st.button('Sertliği Tahmin Et'):
     input_data = np.array([[allelectrons_Total, density_Total, allelectrons_Average,
                             val_e_Average, atomicweight_Average, ionenergy_Average,
                             el_neg_chi_Average, R_vdw_element_Average, R_cov_element_Average,
                             zaratio_Average, density_Average]])
     prediction = voting_clf.predict(input_data)
-    st.subheader(f"Tahmin Edilen Mohs Sertliği: {prediction[0]:.2f}")
+    st.subheader(f"Tahmin Edilen Mohs Sertliği: {prediction[0]:.2f}")'''
