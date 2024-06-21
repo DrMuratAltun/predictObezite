@@ -8,7 +8,7 @@ import xgboost as xgb
 from sklearn.metrics import accuracy_score
 
 # Eğitim verilerini yükle
-train = pd.read_csv('train.csv')
+#train = pd.read_csv('train.csv')
 
 # Bireysel sınıflandırıcıları oluştur
 #log_reg = LogisticRegression(multi_class='multinomial', solver='lbfgs')
@@ -16,7 +16,7 @@ train = pd.read_csv('train.csv')
 #xgb_classifier = xgb.XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
 
 # Bir Voting Classifier oluştur
-voting_clf = VotingClassifier(estimators=[
+'''voting_clf = VotingClassifier(estimators=[
     ('lr', log_reg),
     ('lgbm', lgbm),
     ('xgb', xgb_classifier)
@@ -34,7 +34,7 @@ voting_clf.fit(X_train, y_train)
 
 # Streamlit başlığı
 st.title("Mohs Sertliği Tahmin Uygulaması")
-
+'''
 # Kullanıcıdan girdi alma
 st.header("Mineral Özelliklerini Girin:")
 allelectrons_Total = st.number_input('Toplam Elektron Sayısı')
