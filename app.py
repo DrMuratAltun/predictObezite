@@ -6,7 +6,7 @@ from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
 
 # Eğitim verilerini yükle
-train = pd.read_csv('/kaggle/input/playground-series-s4e2/train.csv')
+train = pd.read_csv('train.csv')
 
 # Kategorik sütunları belirle
 categorical_columns = ['CAEC', 'CALC', 'MTRANS']
