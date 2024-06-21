@@ -6,7 +6,7 @@ from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
 
 # Eğitim verilerini yükle
-train = pd.read_csv('train.csv')
+train = pd.read_csv('/kaggle/input/playground-series-s4e2/train.csv')
 
 # Kategorik sütunları belirle
 categorical_columns = ['CAEC', 'CALC', 'MTRANS']
@@ -87,6 +87,11 @@ if st.button('Obezite Riskini Tahmin Et'):
     user_encoded = hot_encoder.transform(user_df[categorical_columns])
     user_encoded_df = pd.DataFrame(user_encoded, columns=feature_names)
     user_df = pd.concat([user_df.drop(columns=categorical_columns), user_encoded_df], axis=1)
+
+    # Özellik adlarını kontrol et
+    user_df = user_df[X_train.columns]
+
+    # Ölçeklendirme ve dönüşüm
     user_df = scaler.transform(user_df)
     user_df = pt.transform(user_df)
 
