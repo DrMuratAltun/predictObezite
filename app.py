@@ -8,7 +8,7 @@ import xgboost as xgb
 from sklearn.metrics import accuracy_score
 
 # Eğitim verilerini yükle
-train = pd.read_csv('/kaggle/input/playground-series-s3e25/train.csv')
+train = pd.read_csv('train.csv')
 
 # Bireysel sınıflandırıcıları oluştur
 log_reg = LogisticRegression(multi_class='multinomial', solver='lbfgs')
