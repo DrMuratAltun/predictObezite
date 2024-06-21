@@ -5,7 +5,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler, LabelEncoder, P
 from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
 
-# Eğitim verilerini yükle
+# Eğitim verilerini yükle#
 train = pd.read_csv('train.csv')
 
 # Kategorik sütunları belirle
